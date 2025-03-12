@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The libp2p protocol serves as a core networking layer for decentralized systems such as IPFS, Filecoin and Ethereum. It supports a range of transports including TCP, QUIC, and WebRTC, each optimized for different use cases. While this versatility enhances resilience and adaptability, it also complicates the evaluation of performance, particularly when integrating VPN tunneling and overlay technologies designed for security and censorship resistance (OpenVPN, Wireguard, Tor, I2P, lokinet, Nym, Sentinel, Mysterium, Orchid, Elixxir, HOPR, etc).
+The libp2p protocol serves as a core networking layer for decentralized systems such as IPFS, Filecoin and Ethereum. It supports a range of transports including TCP, QUIC, and WebRTC, each optimized for different use cases. While this versatility enhances resilience and adaptability, it also complicates the evaluation of performance, particularly when integrating VPN tunneling and overlay technologies designed for security and censorship resistance ([OpenVPN](https://github.com/OpenVPN/openvpn), [Wireguard](https://www.wireguard.com/), [Tor](https://github.com/thetorproject), [I2P](https://github.com/i2p/i2p.i2p), [lokinet](https://github.com/oxen-io/lokinet), [Nym](https://github.com/nymtech), [Sentinel](https://github.com/sentinel-official), [Mysterium](https://github.com/mysteriumnetwork/node), [Orchid](https://github.com/OrchidTechnologies/orchid), [HOPR](https://github.com/hoprnet/hoprnet), etc).
 
 ## Methodology
 
