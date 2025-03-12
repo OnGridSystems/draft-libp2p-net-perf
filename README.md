@@ -12,7 +12,14 @@ This draft provides a hands-on approach to assessing how libp2p applications per
 
 ## Methodology
 
-TBD
+### Synthetic Traffic
+
+Since P2P applications are resource-intensive and involve multiple parallel connections with uncontrolled peers discovered dynamically, direct performance measurement of them would be too complex.
+
+We propose synthetic testing instead using purpose-built scripts that emulate both ends of the interactions, reproducing traffic patterns as close to live applications as possible.
+
+To ensure realism, these scripts are created by analyzing live application traffic and identifying key behavioral patterns. The goal is to replicate observed traffic characteristics while minimizing complexity for easier measurement, debugging, and evaluation.
+
 
 ## Authors
 
