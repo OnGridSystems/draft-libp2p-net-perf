@@ -70,6 +70,12 @@ For each phase, individual peer states and corresponding traffic streams are ide
 * Record the peak throughput per peer and calculate the 90th percentile of peak bandwidth in KiB/s
 * Determine the time to achieve max bandwidth, secs (per each peer)
 
+## Traffic Generators Development
+
+For each identified traffic pattern, a script or shell snippet is created to generate, receive, and analyze traffic.
+
+Each tool is documented with a README explaining usage, expected results, and interpretation guidelines.
+
 ## Authors
 
 * Kirill Varlamov - Technical Lead, Researcher at OnGrid since 2017, ex Networking Engineer at Cisco (SP Core and Edge, Cloud). Master's Degree, MIEE.
