@@ -44,6 +44,32 @@ Once the application reaches its final state (e.g., full synchronization), the s
 
 * It's recommended to apply BPF filters to the PCAP sniffer to include only packets from and to P2P app ports and use snaplength (-s) to strip packet payloads.
 
+### Data Analysis
+
+Collected logs and network captures are correlated to identify key operational phases, each characterized by distinct traffic patterns and behaviors. For example:
+
+* **Peer Discovery**: The application scans for peers, initiating multiple outbound connections and performing handshakes. Key factors include peer reachability and connection success rate.
+
+* **Bulk State Sync/Download**: The application downloads historical data from peers, typically exhibiting the highest bandwidth usage.
+
+* **Steady-State Operation**: After synchronization, the application processes updates with reduced bandwidth. At this stage, the ability to accept and maintain incoming peer connections is critical.
+
+For each phase, individual peer states and corresponding traffic streams are identified, and key metrics are extracted as follows:
+
+#### Discovery Phase Analysis
+
+* Extract all outbound connections initiated by the application (from the logs, PCAP file or IPFIC/NetFlow records)
+* Identify the responses, extract delays and proportion of responded/silent peers
+* For each established connection measure the traffic volume and time required to transition to the next phase.
+* Track the number of peers that successfully proceed to the next interaction stage.
+* Extract 90th percentile for all measured values.
+
+#### Bulk Download Phase Analysis
+
+* Only consider healthy peers that successfully established a connection without anomalies (disconnected/churn peers should be excluded).
+* Record the peak throughput per peer and calculate the 90th percentile of peak bandwidth in KiB/s
+* Determine the time to achieve max bandwidth, secs (per each peer)
+
 ## Authors
 
 * Kirill Varlamov - Technical Lead, Researcher at OnGrid since 2017, ex Networking Engineer at Cisco (SP Core and Edge, Cloud). Master's Degree, MIEE.
