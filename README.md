@@ -20,6 +20,19 @@ We propose synthetic testing instead using purpose-built scripts that emulate bo
 
 To ensure realism, these scripts are created by analyzing live application traffic and identifying key behavioral patterns. The goal is to replicate observed traffic characteristics while minimizing complexity for easier measurement, debugging, and evaluation.
 
+### Running Live P2P Application Capturing Logs and Dumps
+
+Performance measurement begins by running the actual peer-to-peer application in its standard configuration, typically using a distribution package such as a Docker container.
+
+Since peer-to-peer applications operate in distinct phases with varying traffic patterns, an initial analysis is performed to identify these phases. Dedicated tests are then created for each phase.
+
+Simultaneously, network traffic capture tools such as tcpdump, Wireshark, or tshark are used to dump the traffic.
+
+For broader insights on flows and streams, NetFlow/IPFIX exporters and collectors may be employed.
+
+Once the application reaches its final state (e.g., full synchronization), the state is reset (on-disk database or Docker volume deletion), and the process is repeated multiple times to collect reliable metrics.
+
+
 
 ## Authors
 
