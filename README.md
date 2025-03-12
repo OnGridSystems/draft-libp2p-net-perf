@@ -6,6 +6,10 @@
 
 The libp2p protocol serves as a core networking layer for decentralized systems such as IPFS, Filecoin and Ethereum. It supports a range of transports including TCP, QUIC, and WebRTC, each optimized for different use cases. While this versatility enhances resilience and adaptability, it also complicates the evaluation of performance, particularly when integrating VPN tunneling and overlay technologies designed for security and censorship resistance ([OpenVPN](https://github.com/OpenVPN/openvpn), [Wireguard](https://www.wireguard.com/), [Tor](https://github.com/thetorproject), [I2P](https://github.com/i2p/i2p.i2p), [lokinet](https://github.com/oxen-io/lokinet), [Nym](https://github.com/nymtech), [Sentinel](https://github.com/sentinel-official), [Mysterium](https://github.com/mysteriumnetwork/node), [Orchid](https://github.com/OrchidTechnologies/orchid), [HOPR](https://github.com/hoprnet/hoprnet), etc).
 
+Similarly, tunnels and overlays operate across various layers of the network stack, each imposing distinct constraints and performance implications affecting connectivity, latency, bandwidth utilization, and peer discovery in different ways, further increasing the complexity of network behavior analysis.
+
+This draft provides a hands-on approach to assessing how libp2p applications perform in different network conditions, with a particular focus on how they operate over VPNs.
+
 ## Methodology
 
 TBD
