@@ -32,7 +32,17 @@ For broader insights on flows and streams, NetFlow/IPFIX exporters and collector
 
 Once the application reaches its final state (e.g., full synchronization), the state is reset (on-disk database or Docker volume deletion), and the process is repeated multiple times to collect reliable metrics.
 
+#### Recommendations
 
+* To ensure realistic observations, measurements should be performed in diverse infrastructure environments with commonly used configurations (hosting providers, availability zones, instance flavors, etc)
+
+* System resources (CPU, RAM, disk space and IOps, network throughput) should be enough to prevent local bottlenecks, including peak spikes.
+
+* Both kernel (ufw, iptables) and infrastructure/cloud firewalls should be disabled or relaxed.
+
+* The logging level of the application should be sufficient to track its overall and peer status(es) without degrading its performance (compare metrics with different verbosity levels)
+
+* It's recommended to apply BPF filters to the PCAP sniffer to include only packets from and to P2P app ports and use snaplength (-s) to strip packet payloads.
 
 ## Authors
 
